@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  vacationsolution.web:
+    image: vacationsolution.web
+    build:
+      context: ./VacationSolution.Web
+      dockerfile: Dockerfile
+
+      db:
+      image:"microsoft/mssql-server-linux"
+      ports:
+      "1401:1433"
+      environment:
+      SA-PASSWORD:"Nigeria1"
+      ACCEPT_EULA:"Y"
